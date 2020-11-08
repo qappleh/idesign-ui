@@ -1,0 +1,72 @@
+body {
+  color: $font-color;
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+}
+
+//h1, .#{$prefix}h1 {
+//  @include h_text($h1-font-size);
+//}
+//
+//h2, .#{$prefix}h2 {
+//  @include h_text($h2-font-size);
+//}
+//
+//h3, .#{$prefix}h3 {
+//  @include h_text($h3-font-size);
+//}
+//
+//h4, .#{$prefix}h4 {
+//  @include h_text($h4-font-size);
+//}
+//
+//h5, .#{$prefix}h5 {
+//  @include h_text($h5-font-size);
+//}
+//
+//h6, .#{$prefix}h6 {
+//  @include h_text($h6-font-size);
+//}
+
+@each $name, $value in $font-size-h {
+  #{$name}, .#{$prefix}#{$name} {
+    @include h_text($value);
+  }
+}
+.#{$prefix}h-bold {
+    font-weight: bold;
+}
+
+//p {
+//  font-size: $font-size;
+//}
+
+.#{$prefix}help-block,
+.#{$prefix}help-inline {
+  color: $font-color-tip;
+  font-size: $font-size-sm;
+}
+
+.#{$prefix}help-block {
+  display: block;
+}
+
+.#{$prefix}help-inline {
+  display: inline;
+}
+.#{$prefix}text {
+    font-size: $font-size;
+    font-family: $font-family;
+}
+.#{$prefix}text-strong {
+    @extend .#{$prefix}text;
+    font-weight: bold;
+}
+.#{$prefix}text-quote {
+    @include quote_border(4px, #eee, 15px);
+}
+.#{$prefix}text-tip {
+    font-size: $font-size-sm;
+    color: $font-color-tip;
+}

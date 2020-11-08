@@ -1,0 +1,233 @@
+// form group
+
+.#{$prefix}form .#{$prefix}form-group {
+  display: block;
+
+  &:nth-child(n + 2) {
+    margin-top: $form-group-y-margin;
+  }
+}
+
+.#{$prefix}form-inline .#{$prefix}form-group {
+  display: inline-block;
+  margin-right: $form-group-x-margin;
+
+  &:last-child {
+    margin-left: 0;
+  }
+}
+
+
+// label
+
+.#{$prefix}label {
+  float: left;
+  width: $label-width;
+  padding-right: $label-right;
+  text-align: right;
+  line-height: $label-line-height;
+  @include label_required;
+}
+
+.#{$prefix}label-block {
+  display: block;
+  line-height: $label-line-height;
+  @include label_required;
+}
+
+.#{$prefix}form-content {
+  margin-left: $label-width + $label-right;
+}
+
+// input text
+
+.#{$prefix}input {
+  line-height: $input-line-height;
+  @include text_input($input-pd, $input-bd-width, $input-bd-color, $input-bd-radius);
+}
+
+
+// textarea
+
+.#{$prefix}textarea {
+  display: block;
+  resize: vertical;
+  height: $textarea-height;
+  min-height: $textarea-min-height;
+  @include text_input($textarea-pd, $textarea-bd-width, $textarea-bd-color, $textarea-bd-radius);
+}
+
+
+// radio
+
+.#{$prefix}radio {
+  position: relative;
+  display: inline-block;
+  padding-top: ($label-line-height - $font-size * $line-height) / 2;
+  line-height: $line-height;
+
+  input[type=radio] {
+    display: none;
+
+    & + span:before {
+      @include check_box_wp($radio-width, $radio-height, $radio-bd-width, 100%);
+    }
+    &:checked + span:before {
+      border-color: $check-checked-color;
+    }
+    &:checked + span:after {
+      $width: ($radio-width + $radio-bd-width * 2) / 2 - 1px;
+      $height: ($radio-height + $radio-bd-width * 2) / 2 - 1px;
+
+      content: " ";
+      position: absolute;
+      top: ($label-line-height - $height) / 2;
+      //bottom: 0;
+      left: ($radio-width + $radio-bd-width * 2 - $width) / 2;
+      //margin: auto 0 auto -#{$width / 2};
+      width: $width;
+      height: $height;
+      border-radius: 100%;
+      background-color: $check-checked-color;
+    }
+    &[disabled] + span:before {
+      border-color: $check-disabled-bd-color;
+      background-color: $check-disabled-bg-color;
+    }
+    &[disabled]:checked + span:after {
+      background-color: $check-disabled-checked-color;
+    }
+  }
+
+  span {
+    display: inline-block;
+    padding-left: $radio-width + $radio-right;
+  }
+
+  &:nth-child(n + 2) {
+    margin-left: $check-x-spacing;
+  }
+}
+
+.#{$prefix}radio-block {
+  @extend .#{$prefix}radio;
+  display: block;
+
+  &:nth-child(n + 2) {
+    margin-left: 0;
+  }
+}
+
+
+// checkbox
+
+.#{$prefix}checkbox {
+  position: relative;
+  display: inline-block;
+  padding-top: ($label-line-height - $font-size * $line-height) / 2;
+  line-height: $line-height;
+  
+  input[type=checkbox] {
+    display: none;
+
+    & + span:before {
+      @include check_box_wp($checkbox-width, $checkbox-height, $checkbox-bd-width, $checkbox-radius);
+    }
+    &:checked + span:before {
+      border-color: $check-checked-color;
+      background-color: $check-checked-color;
+    }
+    &:checked + span:after {
+      $width: ($checkbox-width + $checkbox-bd-width * 2) / 2 - 1px;
+      $height: ($checkbox-height + $checkbox-bd-width * 2) / 4;
+
+      content: " ";
+      position: absolute;
+      top: ($label-line-height - $height) / 2 - 2px;
+      bottom: 0;
+      left: $width / 2;
+      //margin: auto 0 auto -#{$width/2};
+      width: $width;
+      height: $height;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg);
+    }
+    &[disabled] + span:before {
+      border-color: $check-disabled-bd-color;
+    }
+    &[disabled]:checked + span:before {
+      border-color: $check-disabled-checked-color;
+      background-color: $check-disabled-checked-color;
+    }
+  }
+
+  span {
+    display: inline-block;
+    padding-left: $checkbox-width + $checkbox-right;
+  }
+
+  &:nth-child(n + 2) {
+    margin-left: $check-x-spacing;
+  }
+}
+
+.#{$prefix}checkbox-block {
+  @extend .#{$prefix}checkbox;
+  display: block;
+
+  &:nth-child(n + 2) {
+    margin-left: 0;
+  }
+}
+
+// select
+
+.#{$prefix}select {
+  font-size: $font-size;
+  line-height: $input-line-height;
+  vertical-align: middle;
+  padding: $input-pd;
+  border: $border-width solid $form-bd-color;
+  border-radius: $border-radius;
+  outline: none;
+  appearance: none;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAFBAMAAABV8cp5AAAAHlBMVEX///9VVVX7+/v19fXx8fGkpKSSkpKBgYF4eHiFhYUcD+weAAAAJklEQVQI12MIFBQUDGAAAzZBQTEGCGAqFCxigAILCQMYk2UKlAEAYGEDIb0LYqIAAAAASUVORK5CYII=') center right no-repeat $white;
+  padding-right: 30px;
+
+  .justify &,
+  &.justify {
+    width: 100%;
+  }
+
+  &[multiple] {
+    height: auto;
+    background: none;
+    padding: $select-pd;
+
+    & option {
+      padding: $select-option-pd;
+    }
+  }
+
+  // 去掉默认样式
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// 校验状态
+.#{$prefix}validate-error {
+  input, select, textarea {
+    border-color: $danger;
+    &:focus {
+      border-color: $danger;
+      box-shadow: 0 0 2px 0 $danger;
+    }
+  }
+
+  .#{$prefix}help-inline,
+  .#{$prefix}help-block {
+    color: $danger;
+  }
+}
