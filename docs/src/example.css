@@ -1,0 +1,63 @@
+.du-example > div, .du-example > h1, .du-example > h2, .du-example > h3, .du-example > h4, .du-example > h5, .du-example > h6, .du-example > p, .du-example > a, .du-example > button, .du-example > ul, .du-example > dl, .du-example > table, .du-example > form, .du-example > input, .du-example > textarea, .du-example > select {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.du-example > [class*=dxy-container] {
+    margin-right: auto;
+}
+
+.du-example .dxy-confirm, .du-example .dxy-modal {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: auto;
+    transform: none;
+}
+
+.du-example .dxy-row {
+    margin-bottom: 10px;
+}
+
+.du-example .dxy-row > div {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 1.5;
+    background-color: #f4fbff;
+    border: 1px solid #89d9fd;
+    font-size: 14px;
+}
+
+.du-example .dxy-go-top {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.du-example .loading-box {
+	text-align: center;
+	margin-bottom: 30px;
+	height: 300px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+.du-example .dxy-loading {
+    position: absolute;
+}
+
+.du-example .loading-box > .red {
+	color: red;
+}
+
+.du-example [class*=dxy-mg], .du-example > [class*=dxy-pd] {
+    background-color: #f4fbff;
+    border: 1px solid #89d9fd;
+}
+
+.du-example .dxy-mask {
+    position: absolute;
+}
+
+.du-example .dxy-select-list {
+    position: relative;
+}
