@@ -1,0 +1,66 @@
+.#{$prefix}btn {
+  color: $btn-color;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: $btn-font-weight;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $btn-radius;
+  border: $btn-border-width solid $btn-bd-color;
+  background-color: $white;
+  line-height: 1;
+  @include btn_size($btn-pd, $btn-font-size);
+  @include btn_hover($btn-bg-color);
+  @include btn_active($btn-bg-color);
+  &.disabled,
+  &[disabled]{
+    color: $btn-disabled-color;
+    border-color: $btn-disabled-bd-color;
+    cursor: not-allowed;
+    background-color: $white;
+  }
+  &:focus{
+    outline:none;
+  }
+}
+
+.#{$prefix}btn-link {
+  color: $btn-link-color;
+  border-color: transparent;
+  background-color: transparent;
+
+  &:hover {
+    color: darken($btn-link-color, $btn-link-hover-darken);
+    background-color: transparent;
+  }
+  &:active,
+  &:focus {
+    color: darken($btn-link-color, $btn-link-focus-darken);
+    background-color: transparent;
+  }
+  &.disabled,
+  &[disabled]{
+    color: $btn-link-disabled-color;
+    border-width: 0;
+  }
+}
+
+@each $name,$color in $btn-situations {
+  .#{$prefix}btn-#{$name} {
+    @include btn_situation($color);
+  }
+}
+
+.#{$prefix}btn-lg {
+  @include btn_size($btn-lg-pd, $btn-lg-font-size);
+}
+
+.#{$prefix}btn-sm {
+  @include btn_size($btn-sm-pd, $btn-sm-font-size);
+}
+
+.#{$prefix}btn-xs {
+  @include btn_size($btn-xs-pd, $btn-xs-font-size);
+}
