@@ -13,10 +13,10 @@ idesign-UI是一套适用于桌面端的前端UI库，不包含任何JS，仅仅
 ./dist/css/dxy-ui.css   //未压缩版本
 ./dist/css/dxy-ui.min.css   //压缩版本
 ```
- 为方便使用，建议先查看[使用文档](https://dxy-f2e.github.io/dxy-ui/docs/)。
+ 为方便使用，建议先查看[使用文档](https://github.com/qappleh/idesign-ui/blob/main/docs/index.html)。
  
 ### 使用文档
-[快速开始吧](https://dxy-f2e.github.io/dxy-ui/docs/)
+[快速开始吧](https://github.com/qappleh/idesign-ui/blob/main/docs/index.html)
  
 ### 开发构建
 
@@ -58,7 +58,7 @@ npm start
     └── README.md
 
 #### 前缀
-DXY-UI 默认带前缀 `dxy-`，如果想去掉或修改前缀，修改 `theme/_normal.scss` 中的变量 `$prefix` 即可。
+idesign-ui 默认带前缀 `dxy-`，如果想去掉或修改前缀，修改 `theme/_normal.scss` 中的变量 `$prefix` 即可。
 
 #### 二次开发
 执行 `npm start` 之后直接修改 `./sass` 中的源文件，
