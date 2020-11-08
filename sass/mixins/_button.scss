@@ -1,0 +1,33 @@
+@mixin btn_hover($bg-color) {
+  &:hover {
+    border-color: darken($bg-color, $btn-hover-darken);
+    background-color: darken($bg-color, $btn-hover-darken);
+  }
+}
+
+@mixin btn_active($bg-color) {
+  &:active,
+  &:focus {
+    border-color: darken($bg-color, $btn-focus-darken);
+    background-color: darken($bg-color, $btn-focus-darken);
+  }
+}
+
+@mixin btn_size($padding, $font-size) {
+  padding: $padding;
+  font-size: $font-size;
+}
+
+@mixin btn_situation($color) {
+  color: $btn-situation-color;
+  border-color: $color;
+  background-color: $color;
+  @include btn_hover($color);
+  @include btn_active($color);
+  &[disabled]{
+    color: $btn-situation-disabled-color;
+    background-color: $btn-disabled-bg-color;
+    border-color: $btn-situation-bd-color;
+    cursor: not-allowed;
+  }
+}
