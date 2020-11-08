@@ -1,0 +1,43 @@
+.#{$prefix}modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+	box-sizing: $modal-box-sizing;
+	width: $modal-width;
+	max-width: 90%;
+	//max-height: 90%;
+	padding: $modal-padding;
+	background-color: $modal-bgcolor;
+	box-shadow: $modal-shadow;
+	border-radius: $modal-radius;
+	transform: translate(-50%, -50%);
+
+	.#{$prefix}modal-head {
+		line-height: 1;
+		position: relative;
+		padding-bottom: $confirm-hd-pb;
+		h4 {
+			line-height: 1;
+		}
+		.close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			border: none;
+			padding: 0;
+			background: transparent;
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+			outline: none;
+			i {
+				font-size: $confirm-close-size;
+				color: $confirm-close-color;
+			}
+		}
+	}
+	.#{$prefix}modal-body {
+		max-height: 500px;
+		overflow-y: auto;
+	}
+}
