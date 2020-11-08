@@ -1,0 +1,15 @@
+.#{$prefix}float-left {
+  float: left;
+}
+
+.#{$prefix}float-right {
+  float: right;
+}
+
+.#{$prefix}clear-fix {
+  &:after {
+    content:" ";
+    display: table;
+    clear: both;
+  }
+}
